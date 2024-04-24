@@ -4,15 +4,20 @@ import {
   createBrowserRouter,
 } from 'react-router-dom';
 
+import {
+  About,
+  HomeLayout,
+  Landing,
+  Error,
+  Newsletter,
+  Cocktail,
+} from './pages';
+
 const router = createBrowserRouter([
-  { path: '/', element: <h1>home page</h1> },
+  { path: '/', element: <HomeLayout /> },
   {
     path: '/about',
-    element: (
-      <div>
-        <h2>about page</h2>
-      </div>
-    ),
+    element: <About />,
   },
 ]);
 
