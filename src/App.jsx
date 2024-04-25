@@ -11,6 +11,7 @@ import {
   Error,
   Newsletter,
   Cocktail,
+  SinglePageError,
 } from './pages';
 import { loader as landingLoader } from './pages/Landing';
 
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Landing />,
+        errorElement: <SinglePageError />,
         loader: landingLoader,
       },
       {
