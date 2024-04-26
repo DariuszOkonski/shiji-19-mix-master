@@ -1,10 +1,27 @@
 import React from 'react';
+import Wrapper from '../assets/wrappers/SearchForm';
+import { useNavigation, Form } from 'react-router-dom';
 
 const SearchForm = () => {
+  const navigation = useNavigation();
+  const isSubmitting = navigation.state === 'submitting';
+
+  console.log(navigation);
+
   return (
-    <div>
-      <h2>SearchForm</h2>
-    </div>
+    <Wrapper>
+      <Form className='form'>
+        <input
+          type='search'
+          name='search'
+          className='form-input'
+          defaultValue='vodka'
+        />
+        <button type='submit' className='btn' disabled={isSubmitting}>
+          {isSubmitting ? 'searching...' : 'search'}
+        </button>
+      </Form>
+    </Wrapper>
   );
 };
 
